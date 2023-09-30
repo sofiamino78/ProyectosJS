@@ -70,7 +70,7 @@ function renderEvents(){
                 <div class="event-name">${event.name} </div>
                 <div class="event-date">${event.date} </div>
                 <div class="actions">
-                    <button class="bDelete" data-id="${event.id} ">Eliminar</button>
+                    <button class="bDelete" data-id="${event.id}">Eliminar</button>
                 </div>
             </div>
         `;
@@ -79,7 +79,7 @@ function renderEvents(){
     document.querySelectorAll('.bDelete').forEach((button) => {
         button.addEventListener('click', (e) => {
             const id = button.getAttribute('data-id');
-            events = events.filter(event => event.id !== id);
+            events = events.filter(event => event.id != id);
             save(JSON.stringify(events));
             renderEvents();
         });
